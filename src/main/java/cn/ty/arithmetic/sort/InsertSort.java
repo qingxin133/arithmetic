@@ -1,54 +1,44 @@
 package cn.ty.arithmetic.sort;
 
-import cn.ty.arithmetic.util.SortUtil;
-
-import java.util.Arrays;
-
 /**
  * 插入排序
- * 如果左边的数比你大，就让左边位移一个，如果左边的数比你小，插入到它后面
  */
-public class InsertSort extends AbstractSort{
+public class InsertSort {
+
+    private static int[] vArray = new int[]{1, 5, 4, 3,9};
 
     public static void main(String[] args) {
-        System.out.println("begin vArray:"+ Arrays.toString(vArray));
-        InsertSort.doInsertSortTest(vArray);
-        System.out.println("end vArray:"+ Arrays.toString(vArray));
+        InsertSort.doInsertSort(vArray);
+        for(int a:vArray){
+            System.out.println(a);
+        }
     }
 
     /**
-     * 自测方法
-     * 基准数与它前面一个数小，才进循环.
-     * @param arr
+     * 从第一个元素开始，该元素认为已经被排序
+     * 在已经排序的元素序列中从后向前扫描
+     * 如果该元素（已排序）大于新元素，该元素移到下一个位置
+     * 重复步骤3，直到找到已排序的元素小于或者等于新元素的位置
+     * 将该元素插入到新位置中
+     * 重复步骤2
+     * @param arr 数组
      */
-    public static void doInsertSortTest(int[] arr){
+    public static void doInsertSort(int[] arr){
+        //为空或者只有一个没必要排序
         if(arr==null || arr.length<2)
             return;
-        //基准数
-        for (int i = 1; i <arr.length ; i++) {
-            int benchmark = arr[i];
-            //基准数前面的数,基准数比它小才进
-            while(i>=1 && arr[i-1]>benchmark){
-                arr[i] = arr[i-1];
-                i--;
+        int size=arr.length,temp,j;
+            //如果该元素（已排序）大于新元素，该元素移到下一个位置,重复步骤3
+            //arr[j-1]当前位置，arr[j]前一个数
+            //J控制循环的次数，大于0，最大当前位置次，把前面那个数，交换
+        for (int i = 0; i < size ; i++) {
+            temp = arr[i];
+            for(j=i;j>0 && temp < arr[j-1];j--){
+                arr[j] = arr[j-1];
+                arr[j-1] = temp;
             }
-            arr[i] = benchmark;
         }
+
     }
 
-    @Override
-    public void doSort(int[] arr) {
-        if(arr==null || arr.length<2)
-            return;
-        //基准数
-        for (int i = 1; i <arr.length ; i++) {
-            int benchmark = arr[i];
-            //基准数前面的数,基准数比它小才进
-            while(i>=1 && arr[i-1]>benchmark){
-                arr[i] = arr[i-1];
-                i--;
-            }
-            arr[i] = benchmark;
-        }
-    }
 }
