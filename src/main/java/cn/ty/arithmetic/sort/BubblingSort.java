@@ -13,11 +13,8 @@ public class BubblingSort  extends AbstractSort{
 
     public static void main(String[] args) {
         System.out.println("begin vArray:"+ Arrays.toString(vArray));
-        new BubblingSort().doSort(vArray);
+        new BubblingSort().comparator(vArray);
         System.out.println("end vArray:"+ Arrays.toString(vArray));
-//        for(int a:vArray){
-//            System.out.println(a);
-//        }
     }
 
     /**
@@ -79,16 +76,16 @@ public class BubblingSort  extends AbstractSort{
     }
 
     @Override
-    public void doSort(int[] arr) {
+    public void comparator(int[] arr) {
         if(arr==null || arr.length<2)
             return;
         //外层循环
-        for (int i = 0; i <arr.length ; i++) {
+        for (int end = arr.length-1; end>0 ; end--) {
             boolean flag = true;
             //用交换的方式，把最大的数，换到最后
-            for(int j=0; j<arr.length-1-i;j++){
-                if(arr[j]>arr[j+1]){
-                    SortUtil.swap(arr,j,j+1);
+            for(int i=0; i<end;i++){
+                if(arr[i]>arr[i+1]){
+                    SortUtil.swap(arr,i,i+1);
                     flag = false;
                 }
             }

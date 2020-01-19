@@ -37,6 +37,7 @@ public class SortUtil {
         arr[i] ^= arr[j]; //arr[i] = arr[i]^arr[j]
         arr[j] ^= arr[i]; //arr[j] = arr[j] ^ (arr[i]^arr[j]) = arr[i]异或了两次arr[j] = arr[i]它自己
         arr[i] ^= arr[j]; //arr[i] = arr[i] ^ arr[j] => (arr[i]^arr[j]) ^ arr[i] = arr[j]
+        System.out.print("1"+",");
     }
 
     /**

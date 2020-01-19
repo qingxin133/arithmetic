@@ -14,7 +14,7 @@ public class ShellSort extends AbstractSort {
 
     public static void main(String[] args) {
         System.out.println("begin vArray:"+ Arrays.toString(vArray));
-        new ShellSort().doShellSortTest(vArray);
+        new ShellSort().comparator(vArray);
         System.out.println("end vArray:"+ Arrays.toString(vArray));
     }
     /**
@@ -43,7 +43,7 @@ public class ShellSort extends AbstractSort {
 
 
     @Override
-    public void doSort(int[] arr) {
+    public void comparator(int[] arr) {
 
     }
 }

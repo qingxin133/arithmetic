@@ -8,11 +8,11 @@ public abstract class AbstractSort {
     static int[] vArray = new int[]{2, 9, 6, 7, 1, 10, 8};
 
     /**
-     * 排序的抽象方法
-     * @param arr
+     * 比较器
+     * @param arr 传入的数组
      * @return
      */
-    public abstract void doSort(int[] arr);
+    public abstract void comparator(int[] arr);
 
 
 }
