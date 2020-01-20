@@ -8,6 +8,7 @@ import java.util.Arrays;
  * 选择排序
  * 首先在未排序序列中找到最小元素，存放到排序序列的起始位置
  * 然后再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的后面
+ * 通过遍历选中最大的，标记上,与未排过的最前面一个数交换
  */
 public class SelectionSort extends AbstractSort {
 

@@ -14,7 +14,7 @@ public class ShellSort extends AbstractSort {
 
     public static void main(String[] args) {
         System.out.println("begin vArray:"+ Arrays.toString(vArray));
-        new ShellSort().comparator(vArray);
+        new ShellSort().doShellSortTest(vArray);
         System.out.println("end vArray:"+ Arrays.toString(vArray));
     }
     /**
@@ -31,6 +31,7 @@ public class ShellSort extends AbstractSort {
             for (int i = gap; i < len; i++) {
                 temp = arr[i];
                 int preIndex = i - gap;
+//                System.out.println("i:"+i+",preIndex:"+preIndex);
                 while (preIndex >= 0 && arr[preIndex] > temp) {
                     arr[preIndex + gap] = arr[preIndex];
                     preIndex -= gap;

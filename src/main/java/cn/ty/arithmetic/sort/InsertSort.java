@@ -7,6 +7,7 @@ import java.util.Arrays;
 /**
  * 插入排序
  * 如果左边的数比你大，就让左边位移一个，如果左边的数比你小，插入到它后面
+ * 通过遍历,一路交换，不满足条件交换就插入
  */
 public class InsertSort extends AbstractSort {
 
@@ -32,7 +33,7 @@ public class InsertSort extends AbstractSort {
         for (int i = 1; i < arr.length; i++) {
             int benchmark = arr[i];
             //基准数前面的数,基准数比它小才进
-            while (i >= 1 && arr[i - 1] > benchmark) {
+            while (i >= 1 && benchmark < arr[i - 1]  ) {
                 arr[i] = arr[i - 1];
                 i--;
             }

@@ -8,6 +8,7 @@ import java.util.Arrays;
  * 冒泡排序
  * 从第一个开始，把相邻的数，如果前面比后面大，就交换，把最大的一直换到最后
  * 重复上面的步骤，直到没有数字需要比较
+ * 通过一路交换，找到最大的,放到最后
  */
 public class BubblingSort  extends AbstractSort{
 
