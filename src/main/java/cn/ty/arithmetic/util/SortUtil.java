@@ -1,6 +1,8 @@
 package cn.ty.arithmetic.util;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 排序工具类
@@ -10,13 +12,21 @@ public class SortUtil {
     private static int[] arr = new int[]{1, 9, 6, 7, 2, 10};
 
     public static void main(String[] args) {
-        System.out.println(SortUtil.avg(100,500));
-        System.out.println("args = " + Arrays.toString(arr));
-        SortUtil.swap(arr, 1, 2);
-        System.out.println("args = " + Arrays.toString(arr));
-        System.out.println("with = " + SortUtil.with());
-        System.out.println("or = " + SortUtil.or());
-        SortUtil.xor();
+        Map<Integer, String> map = new HashMap<>();
+        for (int i = 0; i < 10; i++) {
+            map.putIfAbsent(i, "val" + i);
+        }
+//        map.computeIfAbsent(3, num -> "bam");
+//        map.computeIfPresent(3, (num, val) -> val + num);
+        map.computeIfAbsent(3, num -> "valqq" + num);
+        System.out.println( map.get(3));
+//        System.out.println(SortUtil.avg(100,500));
+//        System.out.println("args = " + Arrays.toString(arr));
+//        SortUtil.swap(arr, 1, 2);
+//        System.out.println("args = " + Arrays.toString(arr));
+//        System.out.println("with = " + SortUtil.with());
+//        System.out.println("or = " + SortUtil.or());
+//        SortUtil.xor();
     }
 
     /**
